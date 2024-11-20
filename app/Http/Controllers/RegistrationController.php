@@ -20,7 +20,7 @@ class RegistrationController extends Controller
         $userAttributes = $request->validate([
             'name' => ['required'],
             'email' => ['required', 'email', 'unique:users,email'],
-            'password' => ['required', 'confirmed', Password::min(6)],
+            'password' => ['required', 'confirmed', Password::min(1)],
         ]);
 
         $employerAttributes = $request->validate([
